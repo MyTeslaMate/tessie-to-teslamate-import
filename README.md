@@ -1,2 +1,3 @@
 # tessie-to-teslamate-import
-Te
+
+Query to export data from Tessie CSV files via BigQuery
