@@ -35,9 +35,9 @@ IF(max(c.Charging_State) = 'Charging', 'Engaged', '') as charge_port_latch,
 '' as motorized_charge_port,
 '' as charge_limit_soc_std,
 '' as not_enough_power_to_heat,
-max(c.Battery_Level____) as battery_level,
-max(c.Battery_Level____) - LAST_VALUE(max(c.Battery_Level____))
-    OVER (ORDER BY max(c.Battery_Level____) ASC ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS charge_energy_added,
+max(c.Usable_Battery_Level____) as battery_level,
+max(c.Usable_Battery_Level____) - LAST_VALUE(max(c.Usable_Battery_Level____))
+    OVER (ORDER BY max(c.Usable_Battery_Level____) ASC ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS charge_energy_added,
 IF(max(c.Charging_State) = 'Charging', 1, 0) as charge_port_door_open,
 '' as max_range_charge_counter,
 '' as charge_limit_soc_max,
