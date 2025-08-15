@@ -152,5 +152,5 @@ LEFT JOIN `MY_PROJECT.MY_VIN.climate_states` clim ON FORMAT_TIMESTAMP('%Y-%m-%d 
 LEFT JOIN `MY_PROJECT.MY_VIN.driving_states` d ON FORMAT_TIMESTAMP('%Y-%m-%d %H:%M:00', d.Timestamp__UTC_)= FORMAT_TIMESTAMP('%Y-%m-%d %H:%M:00', c.Timestamp__UTC_)
 /*LEFT JOIN `MY_PROJECT.MY_VIN.battery_states` b ON FORMAT_TIMESTAMP('%Y-%m-%d %H:%M:00', b.Timestamp__UTC_)= FORMAT_TIMESTAMP('%Y-%m-%d %H:%M:00', c.Timestamp__UTC_)*/
 WHERE FORMAT_TIMESTAMP('%Y-%m', c.Timestamp__UTC_) = 'MY_MONTH'
-GROUP BY c.Timestamp__UTC_, FORMAT_TIMESTAMP('%Y-%m-%d %H:%M:00', c.Timestamp__UTC_)
+GROUP BY FORMAT_TIMESTAMP('%Y-%m-%d %H:%M:00', c.Timestamp__UTC_)
 order by FORMAT_TIMESTAMP('%Y-%m-%d %H:%M:00', c.Timestamp__UTC_)
